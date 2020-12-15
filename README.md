@@ -36,7 +36,7 @@ Para participar deste Projeto, é preciso ter comprovada experiência nas seguin
 ## Regras para _'DevOps'_:
 
 A base deste projeto segue os seguintes padrões:
-* Controle de Tarefas:
+* Controle de Tarefas: GtitHub Project at [[https://github.com/rogerio-fersan/cuidado-cristao/projects/1]]
 * Controle de Versões por Git FLow [[https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow]]
 <pre>
 branch master - código-fonte da versão considerada "Última aprovada" (Last Release)
@@ -64,6 +64,7 @@ MAIL_GUN_MY_DOMAIN=
 #.env - [[https://www.npmjs.com/package/dotenv-safe]]
 Arquivo .env - contém as chaves e os valores a serem utilizados para cada ambiente. Este arquivo Não pode ser submetido para o Git!
 </pre>
+* Ambiente de Desenvolvimento (_Desenv_) pelo colaborador: estação local compartilhando um *branch feature*: http://127.0.0.1:3000/
 * Ambiente de Testes Alvo (_Staging_) do código-fonte existente no *branch develop*: https://cuidado-cristao.herokuapp.com/
 * Ambiente de Produção: _Cada Igreja Cristã usuária pode selecionar seu prório ambiente de produção. Vide REGRAS DE LICENCIAMENTO._
 
