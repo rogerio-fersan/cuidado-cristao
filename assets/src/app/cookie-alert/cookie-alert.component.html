@@ -1,0 +1,18 @@
+<div class="modal" [class.visible]="visible" [style.left.px]="mouse.x" [style.top.px]="mouse.y">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" (click)='escondeTooltip()'>OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div [class]="classe" [class.visible]="visible" [style.left.px]="mouse.x" [style.top.px]="mouse.y">
+  <p>Este site utiliza <em>cookies</em> para armazenar somente as informações relativas a conexão entre sua
+    estação e a aplicação. Nenhum dado pessoal será coletado.</p><br />
+  <button class='btn btn-primary' (click)='escondeTooltip()'>OK</button>
+</div>

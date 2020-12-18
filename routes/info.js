@@ -4,7 +4,7 @@ const package = require("../package.json");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: package.name, version: package.version });
+  res.json({ name: package.name, version: package.version });
 });
 
 module.exports = router;
