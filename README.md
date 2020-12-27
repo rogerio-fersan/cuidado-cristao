@@ -92,9 +92,9 @@ Se você já tem alguma experiência nas tecnologias listadas acima, então bast
 
 Mas não nos custa te ajudar um pouco, afinal, quanto mais ágil, melhor XD. Vamos lá:
 
-- O diretório /assets contém um projeto AngularNG escolhido como framework de front-end. Nesta pasta há um arquivo angular.json que por sua vez contém ["outputPath": "../public"], ou seja, o comando _ng build_ irá publicar uma aplicação front-end compilada no diretório /public;
+- O diretório /front-end contém um projeto AngularNG escolhido como framework de front-end. Nesta pasta há um arquivo angular.json que por sua vez contém ["outputPath": "../public"], ou seja, o comando _ng build_ irá publicar uma aplicação front-end compilada no diretório /public do framework Express.js;
 - O diretório /bin contém o arquivo _www.js_. Este arquivo é parte do framework Express.js e atua como _Main Class_ do Projeto Node.js;
-- O diretório /node*modules contém as bibliotecas javascript necessárias à aplicação. \_Não pode ser enviado para o GIT*;
+- O diretório /node_modules contém as bibliotecas javascript necessárias à aplicação. Não pode ser enviado para o GIT;
 - O diretório /public contém as páginas html e demais _assets_ necessários ao funcionamento da aplicação. O framework entende que esta será a pasta raiz da aplicação, ou seja, quanto a aplicação estiver sendo executada, /public/index.html será disponibilizado pelo servidor como http://servidor:porta/index.html;
 - O diretório /routes contém as regras de roteamento para o _backend_, de acordo com os padrões do framework Express.js sobre Node.js;
 - O diretório /view contém as páginas que serão renderizadas pelo _backend_. Nosso projeto de interface deve ser focado no Angular, portanto, utilize este recurso somente para mensagens de erro e/ou funções administrativas. Para saber um pouco mais sobre como construir _views_ renderizáveis no _backend_, visite: https://expressjs.com/en/guide/using-template-engines.html.

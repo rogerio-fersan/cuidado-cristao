@@ -1,10 +1,11 @@
-# Assets
+# Front-End Cuidado Cristao
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` under _front-end_ folder for a _front-end_ dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+run 'npm start' under _root_ (or ../) project folder for a _back-end_ dev server. Front-end was set to request data from `http://localhost:3000` APIs.
 
 ## Code scaffolding
 

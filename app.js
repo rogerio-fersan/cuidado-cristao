@@ -3,7 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-let helnet = require("helmet");
+let helmet = require("helmet");
 require("dotenv-safe");
 
 var indexRouter = require("./routes/index");

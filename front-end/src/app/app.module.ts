@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LogoComponent } from './logo/logo.component';
 import { IdentidadeVisualComponent } from './identidade-visual/identidade-visual.component';
 import { CookieAlertComponent } from './cookie-alert/cookie-alert.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CookieAlertComponent } from './cookie-alert/cookie-alert.component';
     CookieAlertComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
