@@ -107,14 +107,14 @@ Atenção! Não é uma regra! Você é o programador qualificado e sua criativid
 ...recomendamos os seguintes passos:
 
 <pre>
-1º) Navegue para o diretorio /assets e crie seu artefato @angular com o comando @angular/cli: $> ng generate componente|directive|pipe|service|class|guard|interface|enum|module. Caso seu artefato contemple requisições tais como REST|SOAP|Redis, retorne dados FAKE nesta etapa; 
-2º) Teste seus artefatos adicionados na sua interface front-end utilizando o comando @angular/cli $> ng serve' a partir de /assets. Observe que o diretório /public ainda não contém os artefatos criados;
+1º) Navegue para o diretorio /front-end e crie seu artefato @angular com o comando @angular/cli: $> ng generate componente|directive|pipe|service|class|guard|interface|enum|module. Caso seu artefato contemple requisições tais como REST|SOAP|Redis, retorne dados FAKE nesta etapa; 
+2º) Teste seus artefatos adicionados na sua interface front-end utilizando o comando @angular/cli $> ng serve' a partir de /front-end. Observe que o diretório /public ainda não contém os artefatos criados;
 3º) Crie suas rotas Express.js para responder as requisições GET|POST|DELETE|PUT definidas no 1º passo;
 4º) Escreva seus testes unários para os verbos associados às rotas criadas no 3º passo;
 5º) Navegue para a raiz do seu Projeto e teste, teste, teste, por meio do comando #> npm test;
 6º) Modifique seus artefatos criados no 1º passo para conexão 'quase real' com os provedores de dados criados no 3º passo;
-7º) Navegue para o diretório /assets e "Compile" seu projeto de front-end por meio do comando @angular/cli: $> ng build. Observe que agora seu diretório /public foi atualizado com a inclusão/modificação de seus artefatos criados no 1º passo;
-8º) Execute seu projeto Node.js/Express.js/AngularNG por meio do comando #> npm start.
+7º) Navegue para o diretório /front-end e "Compile" seu projeto de front-end por meio do comando @angular/cli: $> ng build. Observe que agora seu diretório /public foi atualizado com a inclusão/modificação de seus artefatos criados no 1º passo;
+8º) Navegue para a pasta raiz do projeto e execute seu projeto Node.js/Express.js/AngularNG por meio do comando #> npm start.
 </pre>
 
 _Sinta-se a vontade para escrever e compartilhar conosco um *script* para automatizar estas etapas. Nós preferimos acompanhar cada passo bem de perto._

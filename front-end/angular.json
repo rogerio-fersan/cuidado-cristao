@@ -26,7 +26,12 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts/jquery.js",
+              "src/assets/scripts/popper.js",
+              "src/assets/scripts/bootstrap.bundle.js",
+              "src/assets/scripts/custom.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -82,14 +87,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts/jquery.js",
+              "src/assets/scripts/popper.js",
+              "src/assets/scripts/bootstrap.bundle.js",
+              "src/assets/scripts/custom.js"
+            ]
           }
         },
         "lint": {

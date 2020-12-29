@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Sophia\git\cuidado-cristao\assets\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\Users\Sophia\git\cuidado-cristao\front-end\src\polyfills.ts */"hN/g");
 
 
 /***/ }),
