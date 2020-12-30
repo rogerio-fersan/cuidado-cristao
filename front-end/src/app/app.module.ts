@@ -3,12 +3,18 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { LogoComponent } from './template/logo/logo.component';
-import { IdentidadeVisualComponent } from './identidade-visual/identidade-visual.component';
 import { CookieAlertComponent } from './template/cookie-alert/cookie-alert.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
+import { LogoComponent } from './template/logo/logo.component';
+import { IdentidadeVisualComponent } from './component/identidade-visual/identidade-visual.component';
 import { BarraNavegacaoComponent } from './template/barra-navegacao/barra-navegacao.component';
 import { BarraRodapeComponent } from './template/barra-rodape/barra-rodape.component';
+import { authInterceptorProviders } from '../app/helper/auth-interceptor';
+import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { SignInComponent } from './component/sign-in/sign-in.component';
+import { ProfileComponent } from './component/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +23,18 @@ import { BarraRodapeComponent } from './template/barra-rodape/barra-rodape.compo
     IdentidadeVisualComponent,
     CookieAlertComponent,
     BarraNavegacaoComponent,
-    BarraRodapeComponent
+    BarraRodapeComponent,
+    SignUpComponent,
+    SignInComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

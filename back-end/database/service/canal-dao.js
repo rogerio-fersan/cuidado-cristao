@@ -1,9 +1,10 @@
 var express = require("express");
-const schemas = require("../schema/schema");
+const schemas = require("../schema/schemas");
 const connection = require("../connection/connect");
 const { ObjectId } = require("mongodb");
 const { disconnect } = require("mongoose");
 const { ObjectID } = require("mongodb");
+var router = express.Router();
 
 //https://mongoosejs.com/docs/queries.html
 

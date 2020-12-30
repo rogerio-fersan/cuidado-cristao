@@ -5,11 +5,14 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 let helmet = require("helmet");
 let cors = require("cors");
+let jwt = require("jsonwebtoken");
+let bcrypt = require("bcryptjs");
 require("dotenv-safe");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 let infoRouter = require("./routes/info");
+let authRouter = require("./routes/auth");
 
 var app = express();
 
@@ -29,8 +32,9 @@ app.use(
   })
 );
 
-app.use("/api/users", usersRouter);
 app.use("/api/info", infoRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/auth", authRouter);
 app.use("/api/", indexRouter);
 app.use("/", indexRouter);
 

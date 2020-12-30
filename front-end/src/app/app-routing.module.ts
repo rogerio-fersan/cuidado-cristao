@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IdentidadeVisualComponent } from './identidade-visual/identidade-visual.component';
+import { IdentidadeVisualComponent } from './component/identidade-visual/identidade-visual.component';
 
 
 const routes: Routes = [
