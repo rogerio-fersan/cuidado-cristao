@@ -1,6 +1,4 @@
-(function () {
-  "use strict";
-
+$(document).ready(function () {
   $(window).scroll(function () {
     var top = $(document).scrollTop();
     if (top > 50) {
@@ -18,7 +16,7 @@
   $('.bs-component [data-toggle="tooltip"]').tooltip();
   $(".bs-component").each(function () {
     var $button = $(
-      '<button class="source-button btn btn-primary btn-xs" role="button" tabindex="0" title="Clique aqui para ver a dica">Dica</button>'
+      '<button class="source-button btn-xs" role="button" tabindex="0" title="Clique aqui para ver a dica">+</button>'
     );
     $(this).append($button);
   });
@@ -30,6 +28,10 @@
     html = cleanSource(html);
     $("#source-modal pre").text(html);
     $("#source-modal").modal();
+  });
+
+  $("#btn-modal-example").click(function () {
+    $("#modal-example").modal();
   });
 
   function cleanSource(html) {
@@ -60,4 +62,4 @@
 
     return lines;
   }
-})();
+});

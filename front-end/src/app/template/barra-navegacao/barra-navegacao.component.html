@@ -1,11 +1,11 @@
-<nav _ngcontent-fcj-c21="" class="navbar navbar-expand-lg navbar-dark bg-dark"><a _ngcontent-fcj-c21="" href="/"
-    class="navbar-brand">{{appName}}</a><button _ngcontent-fcj-c21="" type="button" data-toggle="collapse"
-    data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"
-    class="navbar-toggler" style="margin-right: -0.399963px;"><span _ngcontent-fcj-c21=""
+<nav _ngcontent-fcj-c21="" class="navbar navbar-expand-lg navbar-dark bg-dark"><a _ngcontent-fcj-c21=""
+    routerLink='/home' class="navbar-brand">{{appName}}</a><button _ngcontent-fcj-c21="" type="button"
+    data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
+    aria-label="Toggle navigation" class="navbar-toggler" style="margin-right: -0.399963px;"><span _ngcontent-fcj-c21=""
       class="navbar-toggler-icon"></span></button>
   <div _ngcontent-fcj-c21="" id="navbarColor01" class="collapse navbar-collapse">
     <ul _ngcontent-fcj-c21="" class="navbar-nav mr-auto">
-      <li _ngcontent-fcj-c21="" class="nav-item active">
+      <li _ngcontent-fcj-c21="" class="nav-item">
         <a _ngcontent-fcj-c21="" href="#" class="nav-link">
           Congregar <span _ngcontent-fcj-c21="" class="sr-only">(current)</span>
         </a>
@@ -66,8 +66,19 @@
       <li _ngcontent-fcj-c21="" class="nav-item">
         <a _ngcontent-fcj-c21="" routerLink='/identidade-visual' class="nav-link">Sobre</a>
       </li>
+      <li _ngcontent-fcj-c21="" class="nav-item">
+        <a _ngcontent-fcj-c21="" *ngIf='!isLoggedIn()' routerLink='/signin' class="nav-link">Entrar</a>
+      </li>
+      <li _ngcontent-fcj-c21="" class="nav-item">
+        <a _ngcontent-fcj-c21="" *ngIf='!isLoggedIn()' routerLink='/signup' class="nav-link">Cadastrar-se</a>
+      </li>
+      <li _ngcontent-fcj-c21="" class="nav-item">
+        <a _ngcontent-fcj-c21="" *ngIf='isLoggedIn()' routerLink='/signout' class="nav-link">Sair</a>
+      </li>!
     </ul>
-    <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default"
-      data-auto-logout-link="true" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+
+    <div class="btn btn-default btn-sm" data-width="" data-size="medium" data-button-type="login_with"
+      data-layout="default" data-auto-logout-link="true" data-use-continue-as="false" onlogin="isLoggedIn();">
+    </div>
   </div>
 </nav>

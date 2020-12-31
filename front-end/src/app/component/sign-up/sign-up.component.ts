@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilUsuario } from 'src/app/enum/perfil-usuario.enum';
 import { User } from 'src/app/interface/user';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  styleUrls: ['./sign-up.component.css','../../../bootstrap.css']
 })
 export class SignUpComponent implements OnInit {
 
@@ -22,7 +23,7 @@ export class SignUpComponent implements OnInit {
   onSubmit(): void {
 
     this.user.dataCadastro = new Date();
-    this.user.perfil = 'USER';
+    this.user.perfil = PerfilUsuario.USER;
     this.user.validationStatus = 'PENDING';
     this.authService.register(this.user).subscribe(
       data => {

@@ -12,15 +12,6 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\bin\\www"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Angular/Cli",
-            "skipFiles": [
-                "front-end/node_modules/**"
-            ],
-            "program": "${workspaceFolder}\\front-end\\ng serve"
         }
     ]
 }

@@ -7,7 +7,7 @@ import { Estagio } from '../interface/estagio';
 @Injectable({
   providedIn: 'root'
 })
-export class estagioService {
+export class EstagioService {
 
   constructor(private http: HttpClient) { }
 

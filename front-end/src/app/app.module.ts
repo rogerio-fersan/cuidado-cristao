@@ -15,6 +15,7 @@ import { authInterceptorProviders } from '../app/helper/auth-interceptor';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { HomeComponent } from './component/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProfileComponent } from './component/profile/profile.component';
     BarraRodapeComponent,
     SignUpComponent,
     SignInComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
