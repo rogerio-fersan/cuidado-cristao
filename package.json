@@ -1,7 +1,7 @@
 {
   "name": "cuidado-cristao",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "appName": "Cuidado Cristão",
   "nomeIgreja": "Nome da minha igreja (modifique arquivo package.json)",
   "enderecoIgreja": "Endereco da minha igreja",
