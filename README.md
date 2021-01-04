@@ -45,7 +45,7 @@ A base deste projeto segue os seguintes padrões:
 - Controle de Tarefas: GtitHub Project at [[https://github.com/rogerio-fersan/cuidado-cristao/projects/1]]
 - Controle de Versões por Git FLow [[https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow]]
 <pre>
-branch master - código-fonte da versão considerada "Última aprovada" (Last Release)
+branch main - código-fonte da versão considerada "Última aprovada" (Last Release)
 branch develop - código-fonte da versão em análise para aprovação (Next Release)
 branch release/x.y.z - código-fonte da próxima versão a ser submetida para aprovação (Active Release)
 branch feature/x.y.z - código-fonte da versão em desenvolvimento colaborativo (Next Feature to be released further)
@@ -73,7 +73,7 @@ Arquivo .env - contém as chaves e os valores a serem utilizados para cada ambie
 </pre>
 * Ambiente de Desenvolvimento (_Desenv_) pelo colaborador: estação local compartilhando um *branch feature*: http://127.0.0.1:3000/
 * Ambiente de Testes Alvo (_Staging_) do código-fonte existente no *branch develop*: https://cuidado-cristao.herokuapp.com/
-* Ambiente de Produção: _Cada Igreja Cristã usuária pode selecionar seu prório ambiente de produção. Vide REGRAS DE LICENCIAMENTO._
+* Ambiente de Produção (_Production_) baseado no *branch main*: _Cada Igreja Cristã usuária pode selecionar seu prório ambiente de produção. Vide REGRAS DE LICENCIAMENTO._
 
 ## Como colaborar com o Projeto?
 
