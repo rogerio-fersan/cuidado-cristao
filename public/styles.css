@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+.cookie-alert {
+  background-color: #444;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  display: none;
+  max-width: 500px;
+  padding: 10px 15px;
+  position: absolute;
+  opacity: 0.7;
+}
+.cookie-alert p {
+  font: 14px/1.6 "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.visible {
+  display: inline-block;
+}
+.term {
+  cursor: pointer;
+  display: inline-block;
+  color: red;
+  text-shadow: #444;
+}
+
+
+/*# sourceMappingURL=styles.css.map*/
