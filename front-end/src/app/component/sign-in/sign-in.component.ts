@@ -18,8 +18,15 @@ export class SignInComponent implements OnInit {
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.user = <User>{nome:'',email:'',gravatarUrl:'assets/img/default-logo.png',senha:'*********'};
     if (this.tokenStorage.getToken()) {
+      this.user = this.tokenStorage.getUser();
+      if (!this.user.gravatarUrl) {
+        this.user.gravatarUrl = 'assets/img/default-logo.png';
+      }
       this.isLoggedIn = true;
+    } else {
+      this.isLoggedIn = false;
     }
   }
 

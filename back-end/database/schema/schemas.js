@@ -25,20 +25,20 @@ const Interacao = new Schema({
   _id: String,
   data: Date,
   observacao: String,
-  canal: Canal,
+  canal_id: ObjectID,
 });
 const PedidoOracao = new Schema({
   _id: String,
   assunto: String,
   observacao: String,
-  intercessores: Array,
+  congragadosIntercessores: [ObjectID],
 });
 
 const Celula = new Schema({
   _id: String,
   nome: String,
   caracteristica: String,
-  responsavel: ObjectID, // Congregado
+  responsavel_id: ObjectID, // Congregado
   dataInicio: Date,
   dataFim: Date,
 });
@@ -53,26 +53,23 @@ const Celula = new Schema({
 */
 const Congregado = new Schema({
   _id: String,
-  familia: Familia,
+  familia_id: ObjectID,
   posicao: String,
-  classeEscolaBiblica: ClasseEscolaBiblica,
-  celula: Celula,
-  interacoes: [Interacao],
+  classeEscolaBiblica_id: ObjectID,
+  celula_id: ObjectID,
+  interacoes: [ObjectID],
   nomeCompleto: String,
-  envolvimento: Estagio,
-  pedidosOracao: [PedidoOracao],
+  estagio_id: ObjectID,
+  pedidosOracao: [ObjectID],
   telefone: String,
   dataNascimento: Date,
   endereco: String,
-  responsavel: ObjectID,
+  responsavel_id: ObjectID,
   email: String,
-  grupo: {
-    _id: String,
-    nome: String,
-    caracteristicas: String,
-    responsavel: ObjectID,
-  },
+  grupo_id: ObjectID,
+  user_id: ObjectID,
 });
+
 const Grupo = new Schema({
   _id: String,
   nome: String,
@@ -82,7 +79,7 @@ const Grupo = new Schema({
 
 const UserMidia = new Schema({
   _id: String,
-  canal: Canal,
+  canal_id: ObjectID,
   link: String,
 });
 
@@ -97,7 +94,7 @@ const User = new Schema({
   profissoes: [String],
   telefones: [String],
   email: String,
-  userMidia: [UserMidia],
+  userMidias: [ObjectID],
   senha: String,
   confirmaSenha: String,
   perfil: String,
@@ -106,6 +103,7 @@ const User = new Schema({
   associado: Boolean,
   tries: Number,
   gravatarUrl: String,
+  congregado_id: ObjectID,
 });
 
 module.exports = {

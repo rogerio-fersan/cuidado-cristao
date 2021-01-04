@@ -1,6 +1,7 @@
 import { PerfilUsuario } from "../enum/perfil-usuario.enum";
 import { UserMidia } from "./user-midia";
 
+/* atributo_id corresponde ao ObjectId da relacao */
 export interface User {
    nome: string,
   dataCadastro: Date,
@@ -8,7 +9,7 @@ export interface User {
   profissoes: string[],
   telefones: string[],
   email: string,
-  userMidia: UserMidia[],
+  userMidias: string[],
   senha: string,
   confirmaSenha: string,
   perfil: PerfilUsuario,
@@ -16,5 +17,6 @@ export interface User {
   validationStatus: string,
   associado: boolean,
   tries: number,
-  gravatarUrl: string
+  gravatarUrl: string,
+  congregado_id: string
 }

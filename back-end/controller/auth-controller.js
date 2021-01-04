@@ -1,11 +1,12 @@
-const { db } = require("../database/connection/connect").conn;
-const { User } = require("../database/schema/schemas").User;
+const conn = require("../database/connection/connect").conn;
+const schema = require("../database/schema/schemas");
 require("dotenv-safe");
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
+  const User = conn.model("User", schema.User);
   const user = new User({
     nome: req.body.nome,
     email: req.body.email,
@@ -18,11 +19,13 @@ exports.signup = (req, res) => {
       res.status(500).send({ message: err });
       return;
     }
-    res.send({ message: "User was registered successfully!" });
+    res.send({ message: "Usuario registrado com sucesso!" });
+    return;
   });
 };
 
 exports.signin = (req, res) => {
+  const User = conn.model("User", schema.User);
   User.findOne({
     nome: req.body.nome,
   }).exec((err, user) => {
@@ -32,7 +35,7 @@ exports.signin = (req, res) => {
     }
 
     if (!user) {
-      return res.status(404).send({ message: "User Not found." });
+      return res.status(404).send({ message: "Usuario não encontrado." });
     }
 
     var senhaIsValid = bcrypt.compareSync(req.body.senha, user.senha);

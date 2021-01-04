@@ -9,8 +9,8 @@ import { SignInComponent } from './component/sign-in/sign-in.component';
 const routes: Routes = [
   {path: 'identidade-visual', component: IdentidadeVisualComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'signup', component: SignUpComponent},
-  {path: 'signin', component: SignInComponent},
+  {path: 'sign-up', component: SignUpComponent},
+  {path: 'sign-in', component: SignInComponent},
   {path: '**', redirectTo: 'home'}
 ];
 

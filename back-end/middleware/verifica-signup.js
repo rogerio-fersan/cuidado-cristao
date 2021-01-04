@@ -1,10 +1,11 @@
-const db = require("../database/connection/connect").conn;
-const User = require("../database/schema/schemas").User;
+const conn = require("../database/connection/connect").conn;
+const schema = require("../database/schema/schemas");
 
 checkDuplicateUsernameOrEmail = (req, res, next) => {
-  // Username
+  // nome
+  let User = conn.model("User", schema.User); //new Schema("User", schema.User);
   User.findOne({
-    username: req.body.username,
+    nome: req.body.nome,
   }).exec((err, user) => {
     if (err) {
       res.status(500).send({ message: err });
@@ -12,7 +13,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
     }
 
     if (user) {
-      res.status(400).send({ message: "Failed! Username is already in use!" });
+      res.status(400).send({ message: "O Nome informado já está em uso!" });
       return;
     }
 
@@ -26,10 +27,9 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
       }
 
       if (user) {
-        res.status(400).send({ message: "Failed! Email is already in use!" });
+        res.status(400).send({ message: "O E-mail informado já está em uso" });
         return;
       }
-
       next();
     });
   });

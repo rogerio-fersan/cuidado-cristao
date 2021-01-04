@@ -13,6 +13,7 @@ export class CookieAlertComponent implements OnInit {
   public visible = false;
   public classe = 'cookie-alert';
   public mouse = { x: 50, y: 100 };
+  public zIndex = 500;
 
   alteraPosicaoDaTooltip(x: number, y: number) {
     this.mouse = this.firstAlertService.mouse = { x, y };

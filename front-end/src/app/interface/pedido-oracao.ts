@@ -4,5 +4,5 @@ export interface PedidoOracao {
   _id: string,
   assunto: string,
   observacao: string,
-  intercessores: Congregado[]
+  congregadosIntercessores: string[]
 }

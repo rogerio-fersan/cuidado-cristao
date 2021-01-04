@@ -16,6 +16,7 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { HomeComponent } from './component/home/home.component';
+import { BodyComponent } from './template/body/body.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './component/home/home.component';
     SignUpComponent,
     SignInComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,

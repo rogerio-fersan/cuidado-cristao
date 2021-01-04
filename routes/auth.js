@@ -3,25 +3,15 @@ const verifySignUp = require("../back-end/middleware/verifica-signup");
 const controller = require("../back-end/controller/auth-controller");
 var router = express.Router();
 
-module.exports = function (app) {
-  app.use(function (req, res, next) {
-    res.header(
-      "Access-Control-Allow-Headers",
-      "x-access-token, Origin, Content-Type, Accept"
-    );
-    next();
-  });
+router.get("/", (req, res, next) => {
+  res.json({ message: "Access forbiden" });
+});
 
-  app.post(
-    "/api/auth/signup",
-    [
-      verifySignUp.checkDuplicateUsernameOrEmail,
-      verifySignUp.checkRolesExisted,
-    ],
-    controller.signup
-  );
+router.post("/signup", (req, res, next) => {
+  verifySignUp.checkDuplicateUsernameOrEmail(req, res, next);
+  controller.signup(req, res);
+});
 
-  app.post("/api/auth/signin", controller.signin);
-};
+router.post("/signin", (req, res, next) => controller.signin(req, res));
 
 module.exports = router;

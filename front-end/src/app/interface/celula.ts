@@ -4,7 +4,7 @@ export interface Celula {
   _id: string,
   nome: string,
   caracteristica: string,
-  responsavel: Congregado,
+  responsavel_id: string,
   dataInicio: Date,
   dataFim: Date
 }

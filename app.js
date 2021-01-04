@@ -5,16 +5,27 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 let helmet = require("helmet");
 let cors = require("cors");
-let jwt = require("jsonwebtoken");
-let bcrypt = require("bcryptjs");
-require("dotenv-safe");
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 let infoRouter = require("./routes/info");
 let authRouter = require("./routes/auth");
 
 var app = express();
+require("dotenv-safe").config();
+let origin = process.env.ORIGIN_URL; //--info: http://127.0.0.1:4200 (ng serve port)
+app.use(
+  cors({
+    origin: origin,
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  })
+);
+app.use(function (req, res, next) {
+  res.header(
+    "Access-Control-Allow-Headers",
+    "x-access-token, Origin, Content-Type, Accept"
+  );
+  next();
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -25,16 +36,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(
-  cors({
-    origin: "http://127.0.0.1:4200",
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  })
-);
-
-app.use("/api/info", infoRouter);
-app.use("/api/users", usersRouter);
+// App routes
 app.use("/api/auth", authRouter);
+app.use("/api/info", infoRouter);
 app.use("/api/", indexRouter);
 app.use("/", indexRouter);
 

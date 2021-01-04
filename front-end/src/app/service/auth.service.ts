@@ -3,8 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../interface/user';
 import { PerfilUsuario } from '../enum/perfil-usuario.enum';
-
-const AUTH_API = 'http://localhost:8080/api/auth/';
+import {environment} from '../../environments/environment'
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,17 +14,19 @@ const httpOptions = {
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {  }
 
   login(user: User): Observable<User> {
-    return this.http.post<User>(AUTH_API + 'signin',  {
+    const url = `${environment.apiUrl}/api/auth/`;
+    return this.http.post<User>(url + 'signin',  {
       nome: user.nome,
       senha: user.senha
     } , httpOptions);
   }
 
   register(user: User): Observable<User> {
-    return this.http.post<User>(AUTH_API + 'signup', user, httpOptions);
+    const url = `${environment.apiUrl}/api/auth/`;
+    return this.http.post<User>(url + 'signup', user, httpOptions);
   }
 
   isAdmin(user: User): boolean {

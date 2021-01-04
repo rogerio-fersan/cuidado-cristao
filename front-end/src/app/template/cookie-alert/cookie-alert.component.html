@@ -1,8 +1,10 @@
-<div [class]="classe" [class.visible]="visible" [style.left.px]="mouse.x" [style.top.px]="mouse.y">
+<div [style.z-index]='zIndex' [class]="classe" [class.visible]="visible" [style.left.px]="mouse.x"
+  [style.top.px]="mouse.y">
   <h3>Aviso de Cookies</h3>
   <p>Este site utiliza <em>Cookies</em>, pequenos arquivos para armazenar somente as informações para proteger a sua
     experiência.<br />
     Nenhum dado pessoal será coletado.</p><br />
   <button class='btn btn-primary mr-2' (click)='escondeTooltip()'>OK, quero continuar</button>
-  <button class='btn btn-warning' onclick="window.document.close()">Quero sair daqui</button>
+  <button class='btn btn-warning' onclick="window.location.href='https://google.com/search?q=cuidado+cristao'">Quero
+    sair daqui</button>
 </div>

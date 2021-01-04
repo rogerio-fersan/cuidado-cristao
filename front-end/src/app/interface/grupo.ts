@@ -4,5 +4,5 @@ export interface Grupo {
   _id: string,
   nome: string,
   caracteristicas: string,
-  responsavel: Congregado
+  responsavel_id: string,
 }

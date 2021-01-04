@@ -6,20 +6,25 @@ import { Familia } from "./familia";
 import { Grupo } from "./grupo";
 import { Interacao } from "./interacao";
 import { PedidoOracao } from "./pedido-oracao";
+
+/*
+nome_id: string armazena o ObjectId da relacao
+*/
 export interface Congregado {
   _id: string,
   familia: Familia,
-  posicao: PosicaoCongregado,
-  classeEscolaBiblica: ClasseEscolaBiblica,
-  celula: Celula,
-  interacoes: Interacao[],
+  posicao_id: string,
+  classeEscolaBiblica_id: string,
+  celula_id: string,
+  interacoes: string[],
   nomeCompleto: string,
-  envolvimento: Estagio,
-  pedidosOracao: PedidoOracao[],
+  estagio_id: string,
+  pedidosOracao: string[],
   telefone: string,
   dataNascimento: Date,
   endereco: string,
-  responsavel: Congregado,
+  responsavel_id: string,
   email: string,
-  grupo: Grupo
+  grupo_id: string,
+  user_id: string
 }

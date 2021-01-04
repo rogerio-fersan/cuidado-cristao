@@ -2,6 +2,6 @@ import { Canal } from "./canal";
 
 export interface UserMidia {
    _id: string,
-  canal: Canal,
+  canal_id: string,
   link: string
 }

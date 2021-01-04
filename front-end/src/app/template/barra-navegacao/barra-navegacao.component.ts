@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoService } from 'src/app/service/info.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
@@ -8,12 +9,18 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class BarraNavegacaoComponent implements OnInit {
 
-  public appName = 'Cuidado Cristão' //TODO - Modificar para obter o nome a partir do backend
+  public appName: string;
 
 
-  constructor(private tokenStorage: TokenStorageService) { }
+  constructor(private tokenStorage: TokenStorageService, private infoService: InfoService) { }
 
   ngOnInit() {
+    this.infoService.get().subscribe(info => {
+      this.appName = info.appName;
+    },
+      err => {
+        this.appName = 'Cuidado Cristão';
+    })
   }
 
   isLoggedIn() {
