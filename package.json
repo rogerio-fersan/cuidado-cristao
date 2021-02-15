@@ -1,6 +1,6 @@
 {
   "name": "cuidado-cristao",
-  "version": "0.0.0-b1",
+  "version": "0.1.0",
   "private": false,
   "appName": "Cuidado Cristão",
   "nomeIgreja": "Nome da minha igreja (modifique arquivo package.json)",

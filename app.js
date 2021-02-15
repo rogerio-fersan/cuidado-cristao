@@ -9,15 +9,22 @@ let cors = require("cors");
 var indexRouter = require("./routes/index");
 let infoRouter = require("./routes/info");
 let authRouter = require("./routes/auth");
+let userRouter = require("./routes/users");
 
 var app = express();
 require("dotenv-safe").config();
 let origin = process.env.ORIGIN_URL; //--info: http://127.0.0.1:4200 (ng serve port)
 app.use(
-  cors({
-    origin: origin,
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  })
+  cors([
+    {
+      origin: origin,
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    },
+    {
+      origin: "https://connect.facebook.net",
+      optionsSuccessStatus: 200,
+    },
+  ])
 );
 app.use(function (req, res, next) {
   res.header(
@@ -39,6 +46,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // App routes
 app.use("/api/auth", authRouter);
 app.use("/api/info", infoRouter);
+app.use("/api/users", userRouter);
 app.use("/api/", indexRouter);
 app.use("/", indexRouter);
 

@@ -17,4 +17,8 @@ export class UserService {
     return this.http.get<User>(API_URL + '/users/list');
   }
 
+  count(): Observable<Number> {
+    return this.http.get<Number>(API_URL + '/users/count');
+  }
+
 }

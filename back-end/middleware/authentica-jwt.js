@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const { db } = require("../database/connection/connect").conn;
 const User = require("../database/schema/schemas");
 require("dotenv-safe");
 

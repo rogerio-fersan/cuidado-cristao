@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
+import { NgLoadingSpinnerModule, NgLoadingSpinnerInterceptor } from 'ng-loading-spinner';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CookieAlertComponent } from './template/cookie-alert/cookie-alert.component';
@@ -17,6 +18,9 @@ import { SignInComponent } from './component/sign-in/sign-in.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { HomeComponent } from './component/home/home.component';
 import { BodyComponent } from './template/body/body.component';
+import { SignOutComponent } from './component/sign-out/sign-out.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { SobreComponent } from './component/sobre/sobre.component';
 
 @NgModule({
   declarations: [
@@ -30,15 +34,19 @@ import { BodyComponent } from './template/body/body.component';
     SignInComponent,
     ProfileComponent,
     HomeComponent,
-    BodyComponent
+    BodyComponent,
+    SignOutComponent,
+    DashboardComponent,
+    SobreComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgLoadingSpinnerModule,
     FormsModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders,{ provide: HTTP_INTERCEPTORS, useClass: NgLoadingSpinnerInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

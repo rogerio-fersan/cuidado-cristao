@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenStorage.getUser()) {
-      this.content = `Bem vindo ${this.tokenStorage.getUser().nome}`
+      this.router.navigateByUrl('/dashboard')
     } else {
       this.router.navigateByUrl('/sign-in')
     }
