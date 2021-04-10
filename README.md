@@ -45,10 +45,11 @@ A base deste projeto segue os seguintes padrões:
 - Controle de Tarefas: GtitHub Project at [[https://github.com/rogerio-fersan/cuidado-cristao/projects/1]]
 - Controle de Versões por Git FLow [[https://www.atlassian.com/br/git/tutorials/comparing-workflows/gitflow-workflow]]
 <pre>
-branch main - código-fonte da versão considerada "Última aprovada" (Last Release)
-branch develop - código-fonte da versão em análise para aprovação (Next Release)
-branch release/x.y.z - código-fonte da próxima versão a ser submetida para aprovação (Active Release)
-branch feature/x.y.z - código-fonte da versão em desenvolvimento colaborativo (Next Feature to be released further)
+branch main - código-fonte da versão considerada "Última aprovada" (Last Release x.a.a)
+branch develop - código-fonte da versão em análise para aprovação (Next Release x.a.b)
+branch release/x.a.c - código-fonte da próxima versão a ser submetida para aprovação (Active Release)
+branch feature/x.a.d - código-fonte da versão em desenvolvimento colaborativo (Next Feature to be released further)
+branch hotfix/x.a.a.n - código-fonte para 'correção emergencial' da versão principal (main)
 </pre>
 - Gerenciamento de Variáveis de Ambiente:
 <pre>
@@ -68,33 +69,35 @@ MAIL_GUN_MY_DOMAIN=
 </pre>
 
 #.env - [[https://www.npmjs.com/package/dotenv-safe]]
-Arquivo .env - contém as chaves e os valores a serem utilizados para cada ambiente. Este arquivo Não pode ser submetido para o Git!
+Arquivo .env - contém as chaves e os valores a serem utilizados para cada ambiente. 
+**Este arquivo Não pode ser submetido para o Git!**
 
 </pre>
 * Ambiente de Desenvolvimento (_Desenv_) pelo colaborador: estação local compartilhando um *branch feature*: http://127.0.0.1:3000/
-* Ambiente de Testes Alvo (_Staging_) do código-fonte existente no *branch develop*: https://cuidado-cristao.herokuapp.com/
+* Ambiente de Testes Alvo (_Stagging_) do código-fonte existente no *branch develop*: https://cuidado-cristao.herokuapp.com/
 * Ambiente de Produção (_Production_) baseado no *branch main*: _Cada Igreja Cristã usuária pode selecionar seu prório ambiente de produção. Vide REGRAS DE LICENCIAMENTO._
-
-## Como colaborar com o Projeto?
-
-Se você acredita que pode colaborar com nossos objetivos, de forma voluntária, seja como "Analista de Sistemas" ou "Full-Stack" (estamos nos referindo aos termos genéricos mesmo!), então preencha o formulário em [[https://docs.google.com/forms/d/e/1FAIpQLSdlS7IZ7Db2yvQ1WV07e-XDI7Pcbp92C-MDV_moCtAN3CkuiQ/viewform?usp=pp_url&entry.767263727=Sim,+estou+ciente+e+autorizo]] e nós entraremos em contato com você.
 
 ### Capacitação recomendada:
 
 Se tu acreditas que estás aquém do que é preciso para colaborar conosco, recomendamos os seguintes canais de aprendizado:
 
 - Luiz Tools [[https://www.luiztools.com.br/categoria/web/nodejs/]]
-- Dev Média [[https://www.devmedia.com.br/tecnologia/]]
+- Site oficial do Angular [[https://angular.io/docs]]
+- Dev Media [[https://www.devmedia.com.br/tecnologia/]]
+## Como colaborar com o Projeto?
+
+Se você acredita que pode colaborar com nossos objetivos, de forma voluntária, seja como "Analista de Sistemas" ou "Full-Stack" (estamos nos referindo aos termos genéricos mesmo!), então preencha o formulário em [[https://docs.google.com/forms/d/e/1FAIpQLSdlS7IZ7Db2yvQ1WV07e-XDI7Pcbp92C-MDV_moCtAN3CkuiQ/viewform?usp=pp_url&entry.767263727=Sim,+estou+ciente+e+autorizo]] e nós entraremos em contato com você.
+
 
 ### Como estruturamos o framework?
 
 Se você já tem alguma experiência nas tecnologias listadas acima, então basta uma lida no código-fonte e tudo irá ficar claro como a luz do dia!
 
-Mas não nos custa te ajudar um pouco, afinal, quanto mais ágil, melhor XD. Vamos lá:
+Mas não nos custa te ajudar um pouco, afinal, quanto mais ágil, melhor! Vamos lá:
 
 - O diretório /front-end contém um projeto AngularNG escolhido como framework de front-end. Nesta pasta há um arquivo angular.json que por sua vez contém ["outputPath": "../public"], ou seja, o comando _ng build_ irá publicar uma aplicação front-end compilada no diretório /public do framework Express.js;
 - O diretório /bin contém o arquivo _www.js_. Este arquivo é parte do framework Express.js e atua como _Main Class_ do Projeto Node.js;
-- O diretório /node_modules contém as bibliotecas javascript necessárias à aplicação. Não pode ser enviado para o GIT;
+- O diretório /node_modules contém as bibliotecas javascript necessárias à aplicação. **Não pode ser enviado para o GIT**;
 - O diretório /public contém as páginas html e demais _assets_ necessários ao funcionamento da aplicação. O framework entende que esta será a pasta raiz da aplicação, ou seja, quanto a aplicação estiver sendo executada, /public/index.html será disponibilizado pelo servidor como http://servidor:porta/index.html;
 - O diretório /routes contém as regras de roteamento para o _backend_, de acordo com os padrões do framework Express.js sobre Node.js;
 - O diretório /view contém as páginas que serão renderizadas pelo _backend_. Nosso projeto de interface deve ser focado no Angular, portanto, utilize este recurso somente para mensagens de erro e/ou funções administrativas. Para saber um pouco mais sobre como construir _views_ renderizáveis no _backend_, visite: https://expressjs.com/en/guide/using-template-engines.html.
@@ -107,9 +110,9 @@ Atenção! Não é uma regra! Você é o programador qualificado e sua criativid
 ...recomendamos os seguintes passos:
 
 <pre>
-1º) Navegue para o diretorio /front-end e crie seu artefato @angular com o comando @angular/cli: $> ng generate componente|directive|pipe|service|class|guard|interface|enum|module. Caso seu artefato contemple requisições tais como REST|SOAP|Redis, retorne dados FAKE nesta etapa; 
-2º) Teste seus artefatos adicionados na sua interface front-end utilizando o comando @angular/cli $> ng serve' a partir de /front-end. Observe que o diretório /public ainda não contém os artefatos criados;
-3º) Crie suas rotas Express.js para responder as requisições GET|POST|DELETE|PUT definidas no 1º passo;
+1º) Navegue para o diretorio /front-end e crie seu artefato @angular com o comando @angular/cli: $> ng generate componente|directive|pipe|service|class|guard|interface|enum|module. Caso seu artefato contemple requisições e respostas REST|SOAP|Redis, retorne dados FAKE nesta etapa; 
+2º) Teste seus artefatos adicionados na sua interface front-end em tempo de execução, utilizando o comando @angular/cli $> ng serve' a partir de /front-end. Observe que o diretório /public ainda não contém os artefatos criados;
+3º) Crie suas rotas Express.js (no diretório /routes) para responder as requisições GET|POST|DELETE|PUT definidas no 1º passo;
 4º) Escreva seus testes unários para os verbos associados às rotas criadas no 3º passo;
 5º) Navegue para a raiz do seu Projeto e teste, teste, teste, por meio do comando #> npm test;
 6º) Modifique seus artefatos criados no 1º passo para conexão 'quase real' com os provedores de dados criados no 3º passo;
