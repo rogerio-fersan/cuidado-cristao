@@ -20,6 +20,7 @@ export class AuthService {
     const url = `${environment.apiUrl}/api/auth/`;
     return this.http.post<User>(url + 'signin',  {
       nome: user.nome,
+      email: user.email,
       senha: user.senha
     } , httpOptions);
   }

@@ -1,0 +1,152 @@
+<form class="form-group" *ngIf="isAdmin() || isOwner()" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+  novalidate>
+
+  <div class="row">
+    <div class="col-md-2">
+      EMail
+    </div>
+    <div class="col-md-10">
+      <input disabled type="tel" class="form-control" [(ngModel)]="instance.email">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      Nome completo
+    </div>
+    <div class="col-md-10">
+      <input type="text" class="form-control" [(ngModel)]="instance.nomeCompleto" required #nomeCompleto='ngModel'>
+      <div class="text-danger" *ngIf='nomeCompleto.invalid && f.submitted'>Nome completo é requerido</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      Data de Nascimento
+    </div>
+    <div class="col-md-10">
+      <input type="date" class="form-control" [(ngModel)]="instance.dataNascimento" required #dataNascimento='ngModel'>
+      <div class="text-danger" *ngIf='dataNascimento.invalid && f.submitted'>Data de Nascimento é requerido</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      Telefone
+    </div>
+    <div class="col-md-10">
+      <input type="tel" class="form-control" [(ngModel)]="instance.telefone" required #telefone='ngModel'>
+      <div class="text-danger" *ngIf='telefone.invalid && f.submitted'>Telefone é requerido</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      Endereço (opcional)
+    </div>
+    <div class="col-md-10">
+      <input type="text" class="form-control" [(ngModel)]="instance.endereco" required #telefone='ngModel'>
+      <div class="text-danger" *ngIf='telefone.invalid && f.submitted'>Telefone é requerido</div>
+    </div>
+  </div>
+
+  <hr />
+  <!--somente Admin-->
+  <div *ngIf="isAdmin()">
+  <div class="row">
+    <div class="col-md-2">
+      Família
+    </div>
+    <div class="col-md-10">
+      <select [(ngModel)]="instance.familia_id">
+        <option *ngFor="let item of familias" [value]="item._id">{{item.sobreNome}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      Posição na Família
+    </div>
+    <div class="col-md-10">
+      <select [(ngModel)]="instance.posicao_id">
+        <option *ngFor="let item of posicoes" [value]="item">{{item.toString()}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      Célula
+    </div>
+    <div class="col-md-10">
+      <select [(ngModel)]="instance.celula_id">
+        <option *ngFor="let item of celulas" [value]="item._id">{{item.nome}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      Grupo
+    </div>
+    <div class="col-md-10">
+      <select [(ngModel)]="instance.grupo_id">
+        <option *ngFor="let item of grupos" [value]="item._id">{{item.nome}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 form-control-text">
+      Estágio
+    </div>
+    <div class="col-md-10">
+      <select [(ngModel)]="instance.estagio_id">
+        <option *ngFor="let item of estagios" [value]="item._id">{{item.titulo}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 form-control-text">
+      Irmão Responsável
+    </div>
+    <div class="col-md-10">
+      <select [(ngModel)]="instance.responsavel_id">
+        <option *ngFor="let item of responsaveis" [value]="item._id">{{item.nome}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 form-control-text">
+      Classe de Escola Bíblica
+    </div>
+    <div class="col-md-10">
+      <select [(ngModel)]="instance.responsavel_id">
+        <option *ngFor="let item of escolas" [value]="item._id">{{item.nome}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="btn-group">
+  <button class="btn btn-primary" [disabled]='f.invalid' type="submit" >Salvar</button>
+  <button class="btn btn-secondary" routerLink='/' >Cancelar</button>
+</div>
+</form>
+
+
+
+
+
+
+familia_id: string,
+posicao_id: string,
+classeEscolaBiblica_id: string,
+celula_id: string,
+interacoes: string[],
+nomeCompleto: string,
+estagio_id: string,
+pedidosOracao: string[],
+telefone: string,
+dataNascimento: Date,
+endereco: string,
+responsavel_id: string,
+email: string,
+grupo_id: string,
+user_id: string

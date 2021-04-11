@@ -7,6 +7,9 @@ import { SignInComponent } from './component/sign-in/sign-in.component';
 import { SignOutComponent } from './component/sign-out/sign-out.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { SobreComponent } from './component/sobre/sobre.component';
+import { PageNotFoundComponent } from './template/page-not-found/page-not-found.component';
+import { SearchCongregadoComponent } from './component/congregado/search-congregado/search-congregado.component';
+import { EditCongregadoComponent } from './congregado/edit-congregado/edit-congregado/edit-congregado.component';
 
 
 const routes: Routes = [
@@ -17,6 +20,9 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent},
   { path: 'sign-out', component: SignOutComponent },
   { path: 'sobre', component: SobreComponent },
+  { path: 'pageNotFound', component: PageNotFoundComponent },
+  { path: 'searchCongregado', component: SearchCongregadoComponent },
+  { path: 'editCongregado/:id', component: EditCongregadoComponent },
 
   {path: '**', redirectTo: 'home'}
 ];

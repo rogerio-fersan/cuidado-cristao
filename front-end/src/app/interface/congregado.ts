@@ -12,7 +12,7 @@ nome_id: string armazena o ObjectId da relacao
 */
 export interface Congregado {
   _id: string,
-  familia: Familia,
+  familia_id: string,
   posicao_id: string,
   classeEscolaBiblica_id: string,
   celula_id: string,

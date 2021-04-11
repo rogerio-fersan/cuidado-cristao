@@ -21,6 +21,9 @@ import { BodyComponent } from './template/body/body.component';
 import { SignOutComponent } from './component/sign-out/sign-out.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { SobreComponent } from './component/sobre/sobre.component';
+import { PageNotFoundComponent } from './template/page-not-found/page-not-found.component';
+import { SearchCongregadoComponent } from './component/congregado/search-congregado/search-congregado.component';
+import { EditCongregadoComponent } from './congregado/edit-congregado/edit-congregado/edit-congregado.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { SobreComponent } from './component/sobre/sobre.component';
     SignOutComponent,
     DashboardComponent,
     SobreComponent,
+    PageNotFoundComponent,
+    SearchCongregadoComponent,
+    EditCongregadoComponent,
   ],
   imports: [
     BrowserModule,

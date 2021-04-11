@@ -8,8 +8,8 @@
         </div>
         <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <div class="form-group">
-            <label for="username">Nome</label>
-            <input type="text" class="form-control" name="username" [(ngModel)]="user.nome" required
+            <label for="username">EMail</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="user.email" required
               #username="ngModel" />
             <div class="alert alert-danger" role="alert" *ngIf="f.submitted && username.invalid">
               Informe o nome corretamente
@@ -34,6 +34,9 @@
           <div class="text-center">
             <a routerLink="/sign-up">Não tenho cadastro</a>
           </div>
+          <div class="text-center text-success">
+            <a href="/forgot-it">Esquecí minha senha</a>
+          </div>
           <div class="form-group">
             <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
               Falha de Login: {{ errorMessage }}
@@ -41,7 +44,7 @@
           </div>
         </form>
         <div class="alert alert-success mt-2" *ngIf="isLoggedIn">
-          Autenticado como {{ user.perfil }}.
+          Autenticado como {{ user.nome }} ({{ user.perfil }}).
         </div>
       </div>
     </div>
